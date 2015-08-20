@@ -1,0 +1,10 @@
+php_flag  display_errors        on
+php_value error_reporting       32767
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule ^(.*)/(.*)$ index.php?controller=$1&action=$2 [NC,L,QSA]
+    RewriteRule ^(.*)$ index.php?uri=$1 [NC,L,QSA]
+</IfModule>

@@ -1,0 +1,11 @@
+{
+  "constants" : {
+    "BASE" : "http://phpmvc.michieldijk.nl"
+  },
+  "database" : {
+    "DBHOST" : "localhost",
+    "DBUSER" : "michiel_phpmvc",
+    "DBPASS" : "password",
+    "DBNAME" : "michiel_phpmvc"
+  }
+}

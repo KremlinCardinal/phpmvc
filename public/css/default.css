@@ -1,0 +1,70 @@
+html {
+	background-color: lightgray;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: white;
+}
+
+header,
+footer {
+	background-color: lightgray;
+}
+
+header,
+main,
+footer {
+	padding: 5px 10px;
+}
+
+footer {
+	margin-top: 20px;
+}
+
+header .title {
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+header nav {
+	padding: 5px 0;
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.errorMessage {
+	border: 2px solid black;
+	padding: 0.5em;
+	background-color: orange;
+}
+
+.monospace {
+	font-family: monospace;
+}
+
+.gallery .image {
+	position: relative;
+	display: inline-block;
+	width: 316px;
+	margin: 0 2px;
+}
+
+#notfound {
+	text-align: center;
+	color: red;
+	border: 1px solid black;
+	background-color: lightgray;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}

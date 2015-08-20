@@ -1,0 +1,42 @@
+<?= $this->view->vakantiedata; ?>
+<hr/>
+<?php
+$arr = json_decode($this->view->vakantiedata, true)['content'][0];
+$htm = "<h2>".$arr['title']."</h2>";
+
+$arrVac = $arr['vacations'];
+$htm .= "<table border='1'>";
+
+foreach($arrVac as $key1 => $val1) {
+	$c1 = count($arrVac[$key1]['regions']);
+
+	$htm .= "<tr>
+				<td rowspan='".$c1."'>".$arrVac[$key1]['type']."</td>
+				<td>".$arrVac[$key1]['regions'][0]['region']."</td>
+				<td>".$arrVac[$key1]['regions'][0]['startdate']."</td>
+				<td>".$arrVac[$key1]['regions'][0]['enddate']."</td>
+			</tr>";
+
+	if($c1 == 3) {
+		$htm .= "<tr>
+					<td>".$arrVac[$key1]['regions'][1]['region']."</td>
+					<td>".$arrVac[$key1]['regions'][1]['startdate']."</td>
+					<td>".$arrVac[$key1]['regions'][1]['enddate']."</td>
+				</tr>";
+
+		$htm .= "<tr>
+					<td>".$arrVac[$key1]['regions'][2]['region']."</td>
+					<td>".$arrVac[$key1]['regions'][2]['startdate']."</td>
+					<td>".$arrVac[$key1]['regions'][2]['enddate']."</td>
+				</tr>";
+	}
+}
+
+$htm .= "</table>";
+
+
+echo $htm;
+?>
+<script>
+	console.log(<?= $this->view->vakantiedata; ?>);
+</script>
