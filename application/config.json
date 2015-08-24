@@ -1,6 +1,6 @@
 {
   "constants" : {
-    "BASE" : "http://phpmvc.michieldijk.nl"
+    "BASE" : "http://127.0.0.1:8080/phpstorm/github/phpmvc"
   },
   "database" : {
     "DBHOST" : "localhost",
