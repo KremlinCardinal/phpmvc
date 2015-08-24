@@ -3,7 +3,7 @@ $html = '<div class="gallery">';
 
 $i = 0;
 foreach($this->view->imageArray as $image) {
-	$html .= '<img src="/'.$image.'" class="image image_'.$i.'" />';
+	$html .= '<img src="/mvc_project/phpmvc/public/'.$image.'" class="image image_'.$i.'" />';
 	$i++;
 }
 $html .= '</div>';
