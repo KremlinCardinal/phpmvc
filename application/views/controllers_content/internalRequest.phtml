@@ -1,6 +1,8 @@
 <script>
-    console.log(<?= $this->view->internalRequest_result; ?>);
+   var $jsonString = <?= $this->view->internalRequest_result; ?>;
 </script>
+<?= $this->view->currentClass; ?>
+<hr>
 <pre class="jsonsring">
     <?= $this->view->internalRequest_result; ?>
 </pre>

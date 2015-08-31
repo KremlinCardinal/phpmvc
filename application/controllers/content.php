@@ -3,6 +3,7 @@ namespace controllers;
 
 use models\database as md;
 class content {
+	public $currentClass;
     public $controllerTitle;
 	public $show_test;
 	public $add_boe;
@@ -10,6 +11,7 @@ class content {
 	public $internalRequest_result;
 
 	function __construct() {
+		$this->currentClass = get_class();
 		$this->controllerTitle = '<h4>Controller = '.get_class().'</h4>';
 	}
 
