@@ -7,6 +7,7 @@ class content {
 	public $show_test;
 	public $add_boe;
 	public $table_result;
+	public $internalRequest_result;
 
 	function __construct() {
 		$this->controllerTitle = '<h4>Controller = '.get_class().'</h4>';
@@ -30,5 +31,12 @@ class content {
 		$db = new md\query();
 		$res = $db->maakTabel("SELECT * FROM klanten");
 		$this->table_result = $res;
+	}
+
+	public function internalRequest() {
+		$db = new md\query();
+		$res = $db->getArray("SELECT * FROM klanten");
+
+		$this->internalRequest_result = json_encode($res, JSON_PRETTY_PRINT);
 	}
 }
