@@ -19,7 +19,8 @@ class router extends mvc {
 				'add',
 				'error',
 				'show',
-				'table'
+				'table',
+				'internalRequest'
 			),
 			'gallery' => array(
 				'show'

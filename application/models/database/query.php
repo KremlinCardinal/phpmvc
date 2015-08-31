@@ -14,8 +14,11 @@ class query extends database {
 
 	public function getArray($pQuery) {
 		$result = $this->executeQuery($pQuery,true);
-		$return = mysqli_fetch_assoc($result);
-
+		$return = array();
+		$i = 0;
+		while($row = mysqli_fetch_assoc($result)) {
+			$return[$i++] = $row;
+		}
 		return $return;
 	}
 
