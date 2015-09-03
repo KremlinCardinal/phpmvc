@@ -1,11 +1,11 @@
 {
   "constants" : {
-    "BASE" : "http://127.0.0.1:8080/phpstorm/github/phpmvc"
+    "BASE" : "http://127.0.0.1:8080/GitHub/phpmvc/public"
   },
   "database" : {
     "DBHOST" : "localhost",
-    "DBUSER" : "michiel_phpmvc",
-    "DBPASS" : "password",
+    "DBUSER" : "root",
+    "DBPASS" : "",
     "DBNAME" : "michiel_phpmvc"
   }
 }

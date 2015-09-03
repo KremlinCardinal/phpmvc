@@ -25,7 +25,7 @@ try {
 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="<?= BASE; ?>/public/css/default.css"/>
+	<link rel="stylesheet" href="<?= BASE; ?>/css/default.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="js/controllers/content/internalRequest.js"></script>
 </head>
