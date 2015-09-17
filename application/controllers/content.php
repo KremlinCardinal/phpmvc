@@ -1,7 +1,8 @@
 <?php
 namespace controllers;
 
-use models\database as md;
+use models\content as mc;
+use library\database as ld;
 class content {
 	public $currentClass;
     public $controllerTitle;
@@ -9,10 +10,12 @@ class content {
 	public $add_boe;
 	public $table_result;
 	public $internalRequest_result;
+    public $db;
 
 	function __construct() {
 		$this->currentClass = get_class();
 		$this->controllerTitle = '<h4>Controller = '.get_class().'</h4>';
+        $this->db = new ld\query();
 	}
 
     public function show() {
@@ -30,15 +33,12 @@ class content {
 	}
 
 	public function table() {
-		$db = new md\query();
-		$res = $db->maakTabel("SELECT * FROM klanten");
-		$this->table_result = $res;
+		$res = new mc\table();
+		$this->table_result = $res->giveTable();
 	}
 
 	public function internalRequest() {
-		$db = new md\query();
-		$res = $db->getArray("SELECT * FROM klanten");
-
-		$this->internalRequest_result = json_encode($res, JSON_PRETTY_PRINT);
+		$res = new mc\internalRequest();
+		$this->internalRequest_result = json_encode($res->returnTable(), JSON_PRETTY_PRINT);
 	}
 }

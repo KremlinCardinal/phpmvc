@@ -27,7 +27,6 @@ try {
 
 	<link rel="stylesheet" href="<?= BASE; ?>/css/default.css"/>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/controllers/content/internalRequest.js"></script>
 </head>
 <body>
 	<div id="wrapper">

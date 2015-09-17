@@ -1,8 +1,12 @@
 <script>
-   var $jsonString = <?= $this->view->internalRequest_result; ?>;
+    var $jsonString = <?= $this->view->internalRequest_result; ?>;
 </script>
 <?= $this->view->currentClass; ?>
 <hr>
-<pre class="jsonsring">
+<div class="tableOutput"></div>
+<hr>
+<pre class="jsonstring">
     <?= $this->view->internalRequest_result; ?>
 </pre>
+
+<script src="<?= BASE ?>/js/controllers/content/internalRequest.js"></script>

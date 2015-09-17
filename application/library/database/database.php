@@ -1,5 +1,5 @@
 <?php
-namespace models\database;
+namespace library\database;
 
 class database {
 	private $con;

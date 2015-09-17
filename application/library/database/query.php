@@ -1,5 +1,5 @@
 <?php
-namespace models\database;
+namespace library\database;
 
 class query extends database {
 
