@@ -1,5 +1,3 @@
-//console.log($jsonString);
-
 var $htm = '<table border="1">';
 $.each($jsonString, function(i, field) {
     $htm += '<tr>';

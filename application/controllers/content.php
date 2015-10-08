@@ -1,16 +1,29 @@
 <?php
 namespace controllers;
 
-use models\content as mc;
+use models;
 use library\database as ld;
 class content {
+    private $db;
+
 	public $currentClass;
     public $controllerTitle;
 	public $show_test;
 	public $add_boe;
 	public $table_result;
 	public $internalRequest_result;
-    public $db;
+
+    public $berendform_Klantnr;
+    public $berendform_Voorletters;
+    public $berendform_Voorvoegsel;
+    public $berendform_Naam;
+    public $berendform_Adres;
+    public $berendform_Postcode;
+    public $berendform_Plaats;
+    public $berendform_Telefoon;
+    public $berendform_Kredietcode;
+    public $formerror = false;
+    public $berendform_errormessage = '';
 
 	function __construct() {
 		$this->currentClass = get_class();
@@ -33,12 +46,49 @@ class content {
 	}
 
 	public function table() {
-		$res = new mc\table();
-		$this->table_result = $res->giveTable();
+		$res = new models\content();
+		$this->table_result = $res->giveTable('SELECT * FROM klanten');
 	}
 
 	public function internalRequest() {
-		$res = new mc\internalRequest();
-		$this->internalRequest_result = json_encode($res->returnTable(), JSON_PRETTY_PRINT);
+		$res = new models\content();
+		$this->internalRequest_result = json_encode($res->internalRequest('SELECT * FROM klanten'), JSON_PRETTY_PRINT);
 	}
+
+    public function berendform() {
+        $res = new models\content();
+        if(!empty($_POST)) {
+            $klantnr = $_POST['Klantnr'];
+            $voorletters = $_POST['Voorletters'];
+            $voorvoegsel = $_POST['Voorvoegsel'];
+            $naam = $_POST['Naam'];
+            $adres = $_POST['Adres'];
+
+            if(preg_match('/^\d{4}\s?[a-z]{2}$/i',$_POST['Postcode']) === 1) {
+                $postcode = $_POST['Postcode'];
+            } else {
+                $this->formerror = true;
+                $this->berendform_errormessage .= 'Postode onjuist ingevuld. Format: 1234 AB';
+            }
+
+            $telefoon = $_POST['Telefoon'];
+            $kredietcode = $_POST['Kredietcode'];
+
+            if(!$this->formerror) {
+                $res->update("UPDATE klanten SET Voorletters = '$voorletters', Voorvoegsel = '$voorvoegsel', Naam = '$naam', Adres = '$adres', Postcode = '$postcode', Telefoon = '$telefoon', Kredietcode = '$kredietcode' WHERE Klantnr = '$klantnr'");
+            }
+
+        }
+        $formdata = $res->internalRequest('SELECT * FROM klanten WHERE Klantnr = 10010362');
+
+        $this->berendform_Klantnr = $formdata[0]['Klantnr'];
+        $this->berendform_Voorletters = $formdata[0]['Voorletters'];
+        $this->berendform_Voorvoegsel = $formdata[0]['Voorvoegsel'];
+        $this->berendform_Naam = $formdata[0]['Naam'];
+        $this->berendform_Adres = $formdata[0]['Adres'];
+        $this->berendform_Postcode = $formdata[0]['Postcode'];
+        $this->berendform_Plaats = $formdata[0]['Plaats'];
+        $this->berendform_Telefoon = $formdata[0]['Telefoon'];
+        $this->berendform_Kredietcode = $formdata[0]['Kredietcode'];
+    }
 }

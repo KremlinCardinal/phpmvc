@@ -1,0 +1,91 @@
+<script src="<?= BASE ?>/js/controllers/content/berendform.js"></script>
+
+<form action="<?= BASE ?>/content/berendform" method="post">
+    <input type="text" name="Klantnr" hidden value="<?= $this->view->berendform_Klantnr; ?>">
+    <?php if(!empty($this->view->berendform_errormessage)) : ?>
+        <div class="alert alert-danger">
+            <?= $this->view->berendform_errormessage; ?>
+        </div>
+    <?php endif; ?>
+    <table>
+        <tr>
+            <td>
+                <label for="Klantnr">Klantnr</label>
+            </td>
+            <td>
+                <input type="text" name="Klantnr_visible" id="Klantnr" disabled value="<?= $this->view->berendform_Klantnr; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Voorletters">Voorletters</label>
+            </td>
+            <td>
+                <input type="text" name="Voorletters" id="Voorletters" value="<?= $this->view->berendform_Voorletters; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Voorvoegsel">Voorvoegsel</label>
+            </td>
+            <td>
+                <input type="text" name="Voorvoegsel" id="Voorvoegsel" value="<?= $this->view->berendform_Voorvoegsel; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Naam">Naam</label>
+            </td>
+            <td>
+                <input type="text" name="Naam" id="Naam" value="<?= $this->view->berendform_Naam; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Adres">Adres</label>
+            </td>
+            <td>
+                <input type="text" name="Adres" id="Adres" value="<?= $this->view->berendform_Adres; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Postcode">Postcode</label>
+            </td>
+            <td>
+                <input type="text" name="Postcode" id="Postcode" oninput="validatePostal(this)" value="<?= $this->view->berendform_Postcode; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Plaats">Plaats</label>
+            </td>
+            <td>
+                <input type="text" name="Plaats" id="Plaats" value="<?= $this->view->berendform_Plaats; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Telefoon">Telefoon</label>
+            </td>
+            <td>
+                <input type="text" name="Telefoon" id="Telefoon" value="<?= $this->view->berendform_Telefoon; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Kredietcode">Kredietcode</label>
+            </td>
+            <td>
+                <input type="text" name="Kredietcode" id="Kredietcode" value="<?= $this->view->berendform_Kredietcode; ?>">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Opslaan">
+            </td>
+        </tr>
+    </table>
+</form>
+

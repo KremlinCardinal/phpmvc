@@ -3,12 +3,11 @@ namespace library\database;
 
 class query extends database {
 
-	public function executeQuery($pQuery,$return = false) {
+	public function executeQuery($pQuery,$return = false, $affected_row = false) {
 		$query = $pQuery;
 		$result = mysqli_query($this->getConnection(),$query);
-		$this->closeConnection();
 		if($return) {
-			return $result;
+            return $result;
 		}
 	}
 

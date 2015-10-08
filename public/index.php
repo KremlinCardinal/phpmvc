@@ -44,7 +44,8 @@ try {
 					<a href="<?= BASE ?>/content/table">show table</a> |
 					<a href="<?= BASE ?>/content/invalid">invalid uri</a> |
 					<a href="<?= BASE ?>/external/vakanties">external request</a> |
-					<a href="<?= BASE ?>/content/internalRequest">internal request</a>
+					<a href="<?= BASE ?>/content/internalRequest">internal request</a> |
+					<a href="<?= BASE ?>/content/berendform">berendform</a>
 				</nav>
 			</div>
 

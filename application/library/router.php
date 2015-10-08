@@ -20,7 +20,8 @@ class router extends mvc {
 				'error',
 				'show',
 				'table',
-				'internalRequest'
+				'internalRequest',
+                'berendform'
 			),
 			'gallery' => array(
 				'show'
@@ -72,46 +73,5 @@ class router extends mvc {
 			$this->_controller = 'error';
 			$this->_action = 'notfound';
 		}
-
-
-/*		switch($pController) {
-			case 'content':
-				$this->_controller = $pController;
-				switch($pAction) {
-					case 'add':
-						$this->_action = $pAction;
-						break;
-					case 'error':
-						$this->_action = $pAction;
-						break;
-					case 'show':
-						$this->_action = $pAction;
-						break;
-					case 'table':
-						$this->_action = $pAction;
-						break;
-					default:
-						$this->_controller = 'error';
-						$this->_action = 'notfound';
-						break;
-				}
-				break;
-			case 'gallery':
-				$this->_controller = $pController;
-				switch($pAction) {
-					case 'show':
-						$this->_action = $pAction;
-						break;
-					default:
-						$this->_controller = 'error';
-						$this->_action = 'notfound';
-						break;
-				}
-				break;
-			default:
-				$this->_controller = 'error';
-				$this->_action = 'notfound';
-				break;
-		}*/
 	}
 }
