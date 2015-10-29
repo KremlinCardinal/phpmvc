@@ -46,6 +46,11 @@ try {
 					<a href="<?= BASE ?>/external/vakanties">external request</a> |
 					<a href="<?= BASE ?>/content/internalRequest">internal request</a> |
 					<a href="<?= BASE ?>/content/berendform">berendform</a>
+                    <?php if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == 'false'): ?>
+					| <a href="<?= BASE ?>/user/login">inloggen</a>
+                    <?php else: ?>
+                    | <a href="<?= BASE ?>/user/logout">uitloggen</a>
+                    <?php endif; ?>
 				</nav>
 			</div>
 

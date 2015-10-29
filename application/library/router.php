@@ -21,14 +21,20 @@ class router extends mvc {
 				'show',
 				'table',
 				'internalRequest',
-                'berendform'
+                'berendform',
+                'loggedin',
+                'loggedout'
 			),
 			'gallery' => array(
 				'show'
 			),
 			'external' => array(
 				'vakanties'
-			)
+			),
+            'user' => array(
+                'login',
+                'logout'
+            )
 		);
 	}
 

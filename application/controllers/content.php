@@ -25,6 +25,8 @@ class content {
     public $formerror = false;
     public $berendform_errormessage = '';
 
+    public $getvalues;
+
 	function __construct() {
 		$this->currentClass = get_class();
 		$this->controllerTitle = '<h4>Controller = '.get_class().'</h4>';
@@ -91,4 +93,17 @@ class content {
         $this->berendform_Telefoon = $formdata[0]['Telefoon'];
         $this->berendform_Kredietcode = $formdata[0]['Kredietcode'];
     }
+
+    public function loggedin() {
+        $this->getvalues = $_GET;
+        if(empty($_SESSION['loggedin'])) {
+            $_SESSION['loggedin'] = $_GET['loggedin'];
+        }
+        if(empty($_SESSION['securetoken'])) {
+            $_SESSION['securetoken'] = $_GET['securetoken'];
+        }
+
+    }
+
+    public function loggedout() {}
 }
