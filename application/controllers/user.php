@@ -15,7 +15,7 @@ class user {
 
     public function login() {
         if((isset($_GET['loggedin']) && $_GET['loggedin'] == "false") && (isset($_GET['showerror']) && $_GET['showerror'] == "true")) {
-            $this->loginerror = 'Verkeerde gebruikersnaam of wachtwoord ingevoerd.';
+            $this->loginerror = 'Verkeerde gebruikersnaam of wachtwoord ingevoerd';
         }
     }
 
