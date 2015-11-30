@@ -39,6 +39,8 @@ class content {
 
     public function add() {
 		$this->add_boe = 'Boe';
+        $this->view = 'show';
+        $this->show_test = 'melachm';
     }
 
 	public function error() {

@@ -6,7 +6,7 @@ class mvc {
 	private $action;
 	private $controller;
 	private $controllerstring;
-
+    private $viewfile;
 	public function run() {
 		if(empty($_GET)) {
 			$_GET['uri'] = 'content/show';
@@ -27,12 +27,17 @@ class mvc {
 		$this->action = $method;
 
 		$obj->$method();
-		$this->view = $obj;
+        $this->view = $obj;
+        if(!empty($obj->view)) {
+            $this->viewfile = $obj->view;
+        } else {
+            $this->viewfile = $method;
+        }
 	}
 
 	private function getViewContents() {
 		ob_start();
-		$file = file_get_contents(ROOT.'/application/views/'.$this->controllerstring.'/'.$this->action.'.phtml');
+		$file = file_get_contents(ROOT.'/application/views/'.$this->controllerstring.'/'.$this->viewfile.'.phtml');
 		eval('?>'.$file);
 		return ob_get_clean();
 	}
