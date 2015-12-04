@@ -6,6 +6,9 @@ use library\database as ld;
 class content {
     private $db;
 
+    public $scripts = array();
+    public $styles = array();
+
 	public $currentClass;
     public $controllerTitle;
 	public $show_test;
@@ -31,6 +34,8 @@ class content {
 		$this->currentClass = get_class();
 		$this->controllerTitle = '<h4>Controller = '.get_class().'</h4>';
         $this->db = new ld\query();
+        $this->scripts[] = '<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>';
+        $this->styles[] = '<style>body{background-color: lightyellow}</style>';
 	}
 
     public function show() {
