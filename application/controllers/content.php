@@ -16,17 +16,17 @@ class content {
 	public $table_result;
 	public $internalRequest_result;
 
-    public $berendform_Klantnr;
-    public $berendform_Voorletters;
-    public $berendform_Voorvoegsel;
-    public $berendform_Naam;
-    public $berendform_Adres;
-    public $berendform_Postcode;
-    public $berendform_Plaats;
-    public $berendform_Telefoon;
-    public $berendform_Kredietcode;
+    public $testform_Klantnr;
+    public $testform_Voorletters;
+    public $testform_Voorvoegsel;
+    public $testform_Naam;
+    public $testform_Adres;
+    public $testform_Postcode;
+    public $testform_Plaats;
+    public $testform_Telefoon;
+    public $testform_Kredietcode;
     public $formerror = false;
-    public $berendform_errormessage = '';
+    public $testform_errormessage = '';
 
     public $getvalues;
 
@@ -64,7 +64,7 @@ class content {
 		$this->internalRequest_result = json_encode($res->internalRequest('SELECT * FROM klanten'), JSON_PRETTY_PRINT);
 	}
 
-    public function berendform() {
+    public function testform() {
         $res = new models\content();
         if(!empty($_POST)) {
             $klantnr = $_POST['Klantnr'];
@@ -77,7 +77,7 @@ class content {
                 $postcode = $_POST['Postcode'];
             } else {
                 $this->formerror = true;
-                $this->berendform_errormessage .= 'Postode onjuist ingevuld. Format: 1234 AB';
+                $this->testform_errormessage .= 'Postode onjuist ingevuld. Format: 1234 AB';
             }
 
             $telefoon = $_POST['Telefoon'];
@@ -90,15 +90,15 @@ class content {
         }
         $formdata = $res->internalRequest('SELECT * FROM klanten WHERE Klantnr = 10010362');
 
-        $this->berendform_Klantnr = $formdata[0]['Klantnr'];
-        $this->berendform_Voorletters = $formdata[0]['Voorletters'];
-        $this->berendform_Voorvoegsel = $formdata[0]['Voorvoegsel'];
-        $this->berendform_Naam = $formdata[0]['Naam'];
-        $this->berendform_Adres = $formdata[0]['Adres'];
-        $this->berendform_Postcode = $formdata[0]['Postcode'];
-        $this->berendform_Plaats = $formdata[0]['Plaats'];
-        $this->berendform_Telefoon = $formdata[0]['Telefoon'];
-        $this->berendform_Kredietcode = $formdata[0]['Kredietcode'];
+        $this->testform_Klantnr = $formdata[0]['Klantnr'];
+        $this->testform_Voorletters = $formdata[0]['Voorletters'];
+        $this->testform_Voorvoegsel = $formdata[0]['Voorvoegsel'];
+        $this->testform_Naam = $formdata[0]['Naam'];
+        $this->testform_Adres = $formdata[0]['Adres'];
+        $this->testform_Postcode = $formdata[0]['Postcode'];
+        $this->testform_Plaats = $formdata[0]['Plaats'];
+        $this->testform_Telefoon = $formdata[0]['Telefoon'];
+        $this->testform_Kredietcode = $formdata[0]['Kredietcode'];
     }
 
     public function loggedin() {

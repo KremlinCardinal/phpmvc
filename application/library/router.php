@@ -21,7 +21,7 @@ class router extends mvc {
 				'show',
 				'table',
 				'internalRequest',
-                'berendform',
+                'testform',
                 'loggedin',
                 'loggedout'
 			),
